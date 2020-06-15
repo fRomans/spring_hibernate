@@ -17,10 +17,10 @@ public class MainApp {
 
 
       UserService userService = context.getBean(UserService.class);
-      Car car1 = new Car("bmw",1,"111");
+      Car car1 = new Car("mercedes",1,"111");
       Car car3 = new Car("bmw",3,"333");
-      Car car5 = new Car("bmw",5,"555");
-      Car car7 = new Car("bmw",7,"777");
+      Car car5 = new Car("audi",5,"555");
+      Car car7 = new Car("opel",7,"777");
 
 
       userService.add(new User("User1", "Lastname1", "user1@mail.ru",car1));
@@ -37,7 +37,7 @@ public class MainApp {
          System.out.println("car = "+user.toString());
          System.out.println();
       }
-     Car car = userService.getUserByNumberAndSeries("333",3);
+     Car car = userService.getUserByNumberAndSeries("111",1);
       System.out.println("тачка по номеру и серии- " + car.toString());
       context.close();
    }

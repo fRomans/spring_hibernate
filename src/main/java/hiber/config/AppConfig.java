@@ -1,6 +1,5 @@
 package hiber.config;
 
-//import hiber.model.Car;
 
 import hiber.model.Car;
 import hiber.model.User;
@@ -14,7 +13,6 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-
 import javax.sql.DataSource;
 import java.util.Properties;
 
@@ -49,6 +47,8 @@ public class AppConfig {
         //  props.put("hibernate.dialect", env.getProperty("hibernate.dialect"));
 
         factoryBean.setHibernateProperties(props);
+
+        //аннотированные классы сущностей для регистрации в этом Hibernate SessionFactory
         factoryBean.setAnnotatedClasses(User.class,Car.class);
         return factoryBean;
     }
